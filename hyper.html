@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/hyperscript.org@0.9.13"></script>
+
+        <!--
+        <style type="text/css">
+            body {
+                background-color: #f0f0f2;
+                margin: 0;
+                padding: 0;
+                font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                
+            }
+            div {
+                width: 60vw;
+                margin: 5em auto;
+                padding: 2em;
+                background-color: #fdfdff;
+                border-radius: 0.5em;
+                box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+            }
+            a:link, a:visited {
+                color: #38488f;
+                text-decoration: none;
+            }
+            @media (max-width: 700px) {
+                div {
+                    margin: 0 auto;
+                    width: auto;
+                }
+        </style>         
+        -->
+        <link rel="stylesheet" href="css/app.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+    <body>
+        <title>My _hyperscript testing ground</title>
+        <h1>My _hyperscript testing ground</h1>
+
+        <section>
+            <h2>Fade and remove</h2>
+            <!-- div _="on click transition opacity to 0 then hide me set #restore-target.innerText to 'Restore Me'" class="col-3" id="fade-target">
+                Remove Me
+            </div-->
+            <div _="on click transition opacity to 0 then hide me show #restore-target then transition #restore-target opacity to 100" class="col-2" id="fade-target">
+                Remove Me
+            </div>
+            <div class="col-2">
+                Leave Me
+            </div>
+            <!--div _="on click show #fade-target then transition #fade-target opacity to 100 set #restore-target.InnerText to ''" class="col-3" id="restore-target">
+                
+            </div-->
+            <div _="init hide me on click transition opacity to 0 then hide me show #fade-target then transition #fade-target opacity to 100" class="col-2" id="restore-target">
+                <button >
+                    Restore it
+                </button>
+        </div>
+        </section>
+
+        <section>
+            <style>
+                .red-border {
+                    border: 2px solid red;
+                }
+            </style>
+
+            <h2>Toggle A Class</h2>
+            <div class="col-1">
+                Pattern: toggle a class on another element when clicked
+            </div>
+            <!-- Class- and ID-refs mean you can write concise code without relying on DOM clobbering. -->
+            <div id="toggle-target-3" style="color:red-border" class="col-1">
+                Toggle Target
+            </div>
+            <div class="col-1">
+                <button _="on click toggle .red-border on #toggle-target-3">
+                    Toggle Class
+                </button>
+            </div>
+        </section>
+
+    </body>
+</html>
